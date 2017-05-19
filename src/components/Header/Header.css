@@ -8,47 +8,63 @@
  */
 
 @import '../variables.css';
-
 :root {
-  --brand-color: #61dafb;
+    --brand-color: rgb(21, 132, 12);
+    ;
 }
 
 .root {
-  background: #373277;
-  color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    height: 85vh;
+    color: #15840c;
+}
+
+.root:after {
+    content: "";
+    background-image: url("../Header/bg-hero.jpeg");
+    background-size: 100vw 85%;
+    background-repeat: no-repeat;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .container {
-  margin: 0 auto;
-  padding: 20px 0;
-  max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: var(--max-content-width);
 }
 
 .brand {
-  color: color(var(--brand-color) lightness(+10%));
-  text-decoration: none;
-  font-size: 1.75em; /* ~28px */
+    color: color(var(--brand-color) lightness(+10%));
+    text-decoration: none;
+    font-size: 1.75em;
+    /* ~28px */
 }
 
 .brandTxt {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .banner {
-  text-align: center;
+    text-align: center;
 }
 
 .bannerTitle {
-  margin: 0;
-  padding: 10px;
-  font-weight: normal;
-  font-size: 4em;
-  line-height: 1em;
+    margin: 0;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 4em;
+    line-height: 1em;
 }
 
 .bannerDesc {
-  padding: 0;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.25em;
-  margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.25em;
+    margin: 0;
 }
