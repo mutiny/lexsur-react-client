@@ -4,9 +4,16 @@ import PropTypes from 'prop-types';
 import '../styles/App.css';
 import QuestionForm from './QuestionForm';
 import QuestionList from './QuestionList';
-// TODO: Conditionally render LexRoom if token is absent
-class Lex extends React.Component {
-  constructor(props) {
+import Socket from "../Socket";
+import {Props} from "react";
+
+export interface Props {
+  socket: Socket;
+}
+
+class Lex extends React.Component<Props, State> {
+    socket: Socket;
+  constructor(props: any) {
     super(props);
     const roomName = window.location.pathname.split('/')[2];
     this.state = {
@@ -21,11 +28,7 @@ class Lex extends React.Component {
     this.updateQuestions = this.updateQuestions.bind(this);
     this.setId = this.setId.bind(this);
     this.updateUsers = this.updateUsers.bind(this);
-    this.state.socket.initSocket({
-      callback: this.updateQuestions,
-      idhandler: this.setId,
-      userhandler: this.updateUsers
-    });
+    this.state.socket.initSocket({callback: this.updateQuestions, idhandler: this.setId, userhandler: this.updateUsers});
     console.log(`We are at :${this.state.roomName}.`);
   }
   setId(newId) {
